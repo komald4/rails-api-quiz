@@ -63,6 +63,8 @@ end
 9. What does CORS mean? Why do we have to think about it when making an API?
 
 ```
+CORS -Cross-origin resource sharing
+This occurs during an API request which will error our
 ```
 
 10. What changes do we have to make in our application to allow CORS?
