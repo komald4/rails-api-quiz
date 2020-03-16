@@ -5,31 +5,49 @@
 1. Write the command to create a new Rails application in API mode with a Postgresql database.
 
 ```
+rails new movies-api --api -G -d=postgresql
 ```
 
 2. What are 5 other options that can be passed in to the `rails new` command and what do they do?
 
 ```
+rails g resource Api::V1::Movie year
+rails db:create
+rails db:migrate
+rails db:seed
+rails db:create
 ```
 
 3. What one line of code can be put into `routes.rb` to get all the RESTful routes for a given resource (e.g., dogs)?
 
 ```
+map.resources :photos
+restular.com
+localhot:3000/rails/inforoutes
 ```
 
 4. In the context of API development, what is versioning? How do we implement versioning in a Rails API?
-
 ```
+rails g resource Api::V1::Movie year:integer 
+Nested api. will make assumptions so we will need to change in our code.
 ```
 
 5. What is serialization in reference to a Rails API?
 
 ```
+transforms an JSON object to a string
 ```
 
 6. Imagine a dog walking domain in which a walker has many dogs. Write the `index` action from the `WalkersController`. Remember, your endpoint should return JSON.
 
 ```
+def index
+    @dogs = Dog.all
+
+    respond_to do |format|
+    format.html {render :index}
+    format.json{ render json: @dogs}
+end
 ```
 
 7. Change the code from the question above so that the walkers' dogs get embedded in the JSON being returned from the `index` endpoint.
